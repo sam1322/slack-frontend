@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SignInFlow } from "../types";
+import ShowToken from "./show-token";
 import SignInCard from "./sign-in-card";
 import SignUpCard from "./sign-up-card";
 
@@ -15,7 +16,9 @@ const AuthScreen = () => {
         ) : (
           <SignUpCard setState={setState} />
         )}
+        <ShowToken />
       </div>
+      {/* <div>{JSON.stringify(getCookie("token"))}</div> */}
     </div>
   );
 };
