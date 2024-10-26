@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import ShowToken from "@/features/auth/components/show-token";
+import { UserButton } from "@/features/auth/components/user-button";
 import axios from "axios";
 import { deleteCookie, getCookie } from "cookies-next";
 // import AuthScreen from "@/features/auth/components/auth-screen";
@@ -10,7 +11,7 @@ export default function Home() {
     <>
       Home Page
       <ShowToken />
-      <Button
+      {/* <Button
         variant={"slack"}
         onClick={async () => {
           try {
@@ -32,7 +33,8 @@ export default function Home() {
         }}
       >
         Logout{" "}
-      </Button>
+      </Button> */}
+      <UserButton />
     </>
   );
 
