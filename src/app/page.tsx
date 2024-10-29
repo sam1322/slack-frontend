@@ -2,15 +2,33 @@
 import { Button } from "@/components/ui/button";
 import ShowToken from "@/features/auth/components/show-token";
 import { UserButton } from "@/features/auth/components/user-button";
+import { useCreateWorkspaceModal } from "@/features/workspaces/store/use-create-workspace-modal";
 import axios from "axios";
-import { deleteCookie, getCookie } from "cookies-next";
-// import AuthScreen from "@/features/auth/components/auth-screen";
+import { useEffect, useMemo, useState } from "react";
 
 export default function Home() {
+  const [open, setOpen] = useCreateWorkspaceModal();
+  // const {data , isLoading} = useGetWorkspace()
+  let data = [{ _id: 1 }];
+  let isLoading = false;
+  // const workspaceId = useMemo(() => data?.[0]?._id, [data]);
+  const workspaceId = false;
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (workspaceId) {
+      console.log("Redirect to workspace");
+    } else if (!open) {
+      setOpen(true);
+    }
+  }, [workspaceId, isLoading, open, setOpen]);
+
   return (
     <>
       Home Page
       <ShowToken />
+      <UserButton />
       {/* <Button
         variant={"slack"}
         onClick={async () => {
@@ -34,7 +52,6 @@ export default function Home() {
       >
         Logout{" "}
       </Button> */}
-      <UserButton />
     </>
   );
 
