@@ -63,24 +63,61 @@ const SignUpCard = ({ setState }: SignUpCardProps) => {
         <div className="flex flex-col gap-y-2.5">
           <Button
             disabled={false}
-            onClick={() => {}}
+            onClick={() => {
+              window.location.href = "http://localhost:8080/auth/google";
+            }}
+            variant={"outline"}
+            size={"lg"}
+            className="w-full relative"
+          >
+            <FcGoogle
+              className="absolute top-3 left-2.5"
+              style={{ height: "1.25rem", width: "1.25rem" }}
+            />
+            Continue with Google
+          </Button>
+          <Button
+            disabled={false}
+            onClick={() => {
+              window.location.href = "http://localhost:8080/auth/github";
+
+            }}
+            variant={"outline"}
+            size={"lg"}
+            className="w-full relative"
+          >
+            <FaGithub
+              className="absolute top-3 left-2.5"
+              style={{ height: "1.25rem", width: "1.25rem" }}
+            />
+            Continue with GitHub
+          </Button>
+          {/* TODO:Remove or comment the following buttons later */}
+          <Button
+            disabled={false}
+            onClick={() => {
+              window.location.href = "http://localhost:8080/logout/google";
+            }}
             variant={"outline"}
             size={"lg"}
             className="w-full relative"
           >
             <FcGoogle className="size-5 absolute top-3 left-2.5" />
-            Continue with Google
+            Logout with Google
           </Button>
           <Button
             disabled={false}
-            onClick={() => {}}
+            onClick={() => {
+              window.location.href = "http://localhost:8080/logout/github";
+            }}
             variant={"outline"}
             size={"lg"}
             className="w-full relative"
           >
             <FaGithub className="size-5 absolute top-3 left-2.5" />
-            Continue with Github
+            Logout with Github
           </Button>
+        
         </div>
         <p className="text-xs text-muted-foreground">
           Already have an account ?{" "}

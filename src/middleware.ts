@@ -9,7 +9,7 @@ const isProtectedRoute = (pathname: string) =>
 async function isAuthenticated(request: NextRequest) {
   const tokenObj = request.cookies.get("token");
   const token = tokenObj?.value;
-  console.log("token", token);
+  // console.log("token", token);
   if (!token) return false;
 
   try {
