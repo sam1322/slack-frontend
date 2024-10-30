@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+###  The backend repo is made from [golang](https://github.com/sam1322/go-blueprint-server)
+
 ## Getting Started
 
 First, run the development server:
